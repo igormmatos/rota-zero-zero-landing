@@ -2,7 +2,10 @@
   const IDV = {
     brandReduced: 'assets/brand/rota-zero-zero-reduzida.svg',
     brandReverse: 'assets/brand/rota-zero-zero-reversa-transparente.svg',
+    brandSymbol: 'assets/brand/brand-symbol-ring-bar.svg',
     roadmapSignature: 'assets/brand/product-roadmap-horizontal-warmwhite.svg',
+    socialImage: 'assets/social/og-rota-zero-zero.png',
+    mapFull: 'assets/illustrations/map-00-04-six-routes.svg',
     arrowNext: 'assets/idv/arrow-next-right.svg',
     compassCover: 'assets/idv/icon-compass-cover.svg',
     nodeTerra: 'assets/idv/node-highlight-terra.svg',
@@ -18,7 +21,7 @@
 
   const injectIdvOverrides = () => {
     const style = document.createElement('style');
-    style.dataset.idvAlignment = 'v2';
+    style.dataset.idvAlignment = 'v3';
     style.textContent = `
       .trail-flow { stroke-dasharray: none !important; animation: none !important; }
       .node-halo { animation: none !important; }
@@ -31,8 +34,43 @@
       .roadmap-list .idv-list-icon { width: 1.05rem; height: 1.05rem; flex: 0 0 auto; filter: invert(72%) sepia(18%) saturate(1040%) hue-rotate(114deg) brightness(86%) contrast(87%); }
       .roadmap-list li { display: flex; align-items: center; gap: .65rem; }
       .trail-card .trail-svg text { font-family: Inter, Arial, sans-serif; }
+      .trail-card,
+      .map-card,
+      .question-card,
+      .audience-card,
+      .stage-grid li { border-radius: .75rem; }
+      .trail-card,
+      .map-card { overflow: hidden; }
+      .map-svg .idv-map-full { width: 100%; height: 100%; }
     `;
     document.head.appendChild(style);
+  };
+
+  const upsertMeta = (selector, attributes) => {
+    let element = document.head.querySelector(selector);
+    if (!element) {
+      element = document.createElement('meta');
+      document.head.appendChild(element);
+    }
+    Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
+  };
+
+  const alignHeadAssets = () => {
+    if (!document.head.querySelector('link[data-idv-favicon]')) {
+      const icon = document.createElement('link');
+      icon.rel = 'icon';
+      icon.type = 'image/svg+xml';
+      icon.href = IDV.brandSymbol;
+      icon.dataset.idvFavicon = 'true';
+      document.head.appendChild(icon);
+    }
+
+    upsertMeta('meta[property="og:image"]', { property: 'og:image', content: IDV.socialImage });
+    upsertMeta('meta[property="og:image:width"]', { property: 'og:image:width', content: '1200' });
+    upsertMeta('meta[property="og:image:height"]', { property: 'og:image:height', content: '630' });
+    upsertMeta('meta[property="og:image:alt"]', { property: 'og:image:alt', content: 'ROTA ZERO ZERO — Programação sem começar perdido.' });
+    upsertMeta('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' });
+    upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: IDV.socialImage });
   };
 
   const alignBrandAssets = () => {
@@ -90,6 +128,12 @@
     `;
   };
 
+  const alignMapIllustration = () => {
+    const mapSvg = document.querySelector('.map-svg');
+    if (!mapSvg) return;
+    mapSvg.innerHTML = `<image class="idv-map-full" href="${IDV.mapFull}" x="0" y="0" width="480" height="580" preserveAspectRatio="xMidYMid meet" aria-hidden="true" />`;
+  };
+
   const enhanceProcess = () => {
     const icons = [IDV.iconObserve, IDV.iconBuild, IDV.iconCheck, IDV.iconRoute];
     document.querySelectorAll('.process-grid > li').forEach((item, index) => {
@@ -142,9 +186,11 @@
   };
 
   injectIdvOverrides();
+  alignHeadAssets();
   alignBrandAssets();
   alignCtaArrows();
   alignHeroIllustration();
+  alignMapIllustration();
   enhanceProcess();
   enhanceAudience();
   enhanceRoadmapSection();
