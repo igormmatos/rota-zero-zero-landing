@@ -28,7 +28,12 @@
   });
 
   const reveals = [...document.querySelectorAll('.reveal')];
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const canAnimate = 'IntersectionObserver' in window
+    && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (canAnimate) {
+    reveals.forEach((el) => el.classList.add('will-animate'));
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -37,8 +42,7 @@
         }
       });
     }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+
     reveals.forEach((el) => observer.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add('is-visible'));
   }
 })();
