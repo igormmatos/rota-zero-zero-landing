@@ -1,6 +1,16 @@
-/* ROTA ZERO ZERO — Phase 5
-   Static identity layer plus progressive-enhancement safeguards.
-   Essential content remains visible even if JavaScript fails. */
+/* ROTA ZERO ZERO — Phase 6
+   Refinamento visual baseado no Manual de Identidade Visual V1.2.
+   O princípio permanece: orientar, relacionar e facilitar a leitura; nunca decorar por decorar. */
+
+:root {
+  --idv-surface-green: #DDF1EA;
+  --idv-surface-terra: #F6E5DE;
+  --idv-surface-blue: #E2EAF0;
+  --idv-radius-card: 1rem;
+  --idv-radius-small: .75rem;
+  --idv-shadow-low: 0 8px 24px rgb(28 31 38 / 8%);
+  --idv-shadow-soft: 0 4px 16px rgb(28 31 38 / 5%);
+}
 
 .brand-compact {
   width: auto;
@@ -14,24 +24,142 @@
   padding: 0;
 }
 
+.button,
+.menu-button {
+  border-radius: var(--idv-radius-small);
+}
+
 .button-green .cta-arrow {
   width: 1rem;
   height: 1rem;
   flex: 0 0 auto;
 }
 
+.chips li {
+  border-radius: 999px;
+  background: rgb(255 253 248 / 86%);
+}
+
+.trail-card,
+.map-card,
+.question-card,
+.audience-card {
+  border-radius: var(--idv-radius-card);
+  box-shadow: var(--idv-shadow-low);
+}
+
+.trail-card,
+.map-card {
+  overflow: hidden;
+}
+
+.question-card {
+  border-left-color: var(--verde);
+  background: rgb(255 253 248 / 94%);
+}
+
+.process-grid::before {
+  border-top-style: solid;
+  border-top-color: color-mix(in srgb, var(--linha) 78%, var(--verde) 22%);
+}
+
+.process-grid > li {
+  min-width: 0;
+  padding: 1.35rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--idv-radius-card);
+  background: rgb(255 253 248 / 78%);
+  box-shadow: var(--idv-shadow-soft);
+}
+
+.process-grid > li:nth-child(1),
+.process-grid > li:nth-child(2) {
+  border-top: 3px solid var(--verde);
+}
+
+.process-grid > li:nth-child(3) {
+  border-top: 3px solid var(--terra);
+}
+
+.process-grid > li:nth-child(4) {
+  border-top: 3px solid var(--azul);
+}
+
 .idv-step-icon {
-  width: 1.3rem;
-  height: 1.3rem;
-  margin: 1rem 0 .65rem;
-  opacity: .82;
+  width: 2.65rem;
+  height: 2.65rem;
+  margin: 1rem 0 .75rem;
+  padding: .65rem;
+  border-radius: var(--idv-radius-small);
+  opacity: .92;
+}
+
+.process-grid > li:nth-child(1) .idv-step-icon,
+.process-grid > li:nth-child(2) .idv-step-icon {
+  background: var(--idv-surface-green);
+}
+
+.process-grid > li:nth-child(3) .idv-step-icon {
+  background: var(--idv-surface-terra);
+}
+
+.process-grid > li:nth-child(4) .idv-step-icon {
+  background: var(--idv-surface-blue);
+}
+
+.stage-grid li {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--idv-radius-small);
+  box-shadow: var(--idv-shadow-soft);
+}
+
+.stage-grid li:nth-child(1),
+.stage-grid li:nth-child(2) {
+  border-top: 3px solid var(--verde);
+}
+
+.stage-grid li:nth-child(3) {
+  border-top: 3px solid var(--terra);
+}
+
+.stage-grid li:nth-child(4) {
+  border-top: 3px solid var(--azul);
+}
+
+.stage-grid li:nth-child(5) {
+  border-top: 3px solid var(--tinta);
 }
 
 .idv-audience-icon {
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
   margin-bottom: 1.15rem;
-  opacity: .82;
+  padding: .68rem;
+  border-radius: var(--idv-radius-small);
+  opacity: .92;
+}
+
+.audience-green .idv-audience-icon {
+  background: var(--idv-surface-green);
+}
+
+.audience-blue .idv-audience-icon {
+  background: var(--idv-surface-blue);
+}
+
+.map-note,
+.audience-note {
+  border-radius: var(--idv-radius-small);
+  padding: 1rem 1.15rem;
+}
+
+.map-note {
+  background: color-mix(in srgb, var(--idv-surface-blue) 72%, transparent);
+}
+
+.audience-note {
+  background: color-mix(in srgb, var(--idv-surface-terra) 64%, transparent);
 }
 
 .roadmap-product-signature {
@@ -57,23 +185,19 @@
   font-family: Inter, Arial, sans-serif;
 }
 
-.trail-card,
-.map-card,
-.question-card,
-.audience-card,
-.stage-grid li {
-  border-radius: .75rem;
-}
-
-.trail-card,
-.map-card {
-  overflow: hidden;
-}
-
 .map-illustration {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.footer-top nav a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: .3em;
+}
+
+.footer-top nav a:hover {
+  text-decoration-line: underline;
 }
 
 /* Progressive enhancement: content is visible by default.
@@ -92,6 +216,26 @@
 .reveal.will-animate.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 1023px) {
+  .process-grid > li {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .trail-card,
+  .map-card,
+  .question-card,
+  .audience-card,
+  .process-grid > li {
+    border-radius: .875rem;
+  }
+
+  .process-grid > li {
+    padding: 1.2rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
