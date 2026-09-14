@@ -7,7 +7,7 @@ Landing page oficial da **ROTA ZERO ZERO**, convertida para uma arquitetura est�
 - HTML5
 - CSS3
 - JavaScript puro (Vanilla JS)
-- SVG para os ativos de marca e diagramas
+- SVG para o ativo de marca e os diagramas
 
 Não há React, Vite, Node.js, npm ou etapa de build.
 
@@ -24,9 +24,7 @@ Não há React, Vite, Node.js, npm ou etapa de build.
 │   └── main.js
 └── assets/
     └── brand/
-        ├── rota-zero-zero-completa.svg
-        ├── rota-zero-zero-completa-reversa.svg
-        └── rota-zero-zero-reduzida.svg
+        └── rota-zero-zero-completa.svg
 ```
 
 ## Desenvolvimento local
