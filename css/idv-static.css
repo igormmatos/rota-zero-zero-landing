@@ -40,6 +40,7 @@
   background: rgb(255 253 248 / 86%);
 }
 
+/* Superfícies reais recebem o tratamento tátil da IDV. */
 .trail-card,
 .map-card,
 .question-card,
@@ -58,6 +59,7 @@
   background: rgb(255 253 248 / 94%);
 }
 
+/* A sequência continua sendo uma trilha, não quatro cards isolados. */
 .process-grid::before {
   border-top-style: solid;
   border-top-color: color-mix(in srgb, var(--linha) 78%, var(--verde) 22%);
@@ -65,24 +67,6 @@
 
 .process-grid > li {
   min-width: 0;
-  padding: 1.35rem;
-  border: 1px solid var(--linha);
-  border-radius: var(--idv-radius-card);
-  background: rgb(255 253 248 / 78%);
-  box-shadow: var(--idv-shadow-soft);
-}
-
-.process-grid > li:nth-child(1),
-.process-grid > li:nth-child(2) {
-  border-top: 3px solid var(--verde);
-}
-
-.process-grid > li:nth-child(3) {
-  border-top: 3px solid var(--terra);
-}
-
-.process-grid > li:nth-child(4) {
-  border-top: 3px solid var(--azul);
 }
 
 .idv-step-icon {
@@ -107,6 +91,7 @@
   background: var(--idv-surface-blue);
 }
 
+/* Etapas são superfícies de decisão: cor funcional no topo, sem depender só da cor. */
 .stage-grid li {
   position: relative;
   overflow: hidden;
@@ -160,6 +145,17 @@
 
 .audience-note {
   background: color-mix(in srgb, var(--idv-surface-terra) 64%, transparent);
+}
+
+/* Componentes agrupados ganham acabamento como um conjunto, não card por item. */
+.signal-grid,
+.roadmap-list {
+  border-radius: var(--idv-radius-small);
+  overflow: hidden;
+}
+
+.signal-grid {
+  box-shadow: var(--idv-shadow-soft);
 }
 
 .roadmap-product-signature {
@@ -218,23 +214,12 @@
   transform: translateY(0);
 }
 
-@media (max-width: 1023px) {
-  .process-grid > li {
-    padding: 1.25rem;
-  }
-}
-
 @media (max-width: 520px) {
   .trail-card,
   .map-card,
   .question-card,
-  .audience-card,
-  .process-grid > li {
+  .audience-card {
     border-radius: .875rem;
-  }
-
-  .process-grid > li {
-    padding: 1.2rem;
   }
 }
 
