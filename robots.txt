@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rota-zero-zero-landing-145931.hostingersite.com/sitemap.xml
