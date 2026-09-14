@@ -1,0 +1,86 @@
+/* ROTA ZERO ZERO — Phase 4
+   Static identity layer. Visual composition belongs in HTML/CSS;
+   JavaScript is reserved for behavior only. */
+
+.trail-flow {
+  stroke-dasharray: none !important;
+  animation: none !important;
+}
+
+.node-halo {
+  animation: none !important;
+}
+
+.brand-compact {
+  width: auto;
+  height: 2.5rem;
+}
+
+.footer-logo {
+  width: auto;
+  height: 2.75rem;
+  background: transparent;
+  padding: 0;
+}
+
+.button-green .cta-arrow {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+.idv-step-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 1rem 0 .65rem;
+  opacity: .82;
+}
+
+.idv-audience-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1.15rem;
+  opacity: .82;
+}
+
+.roadmap-product-signature {
+  width: min(100%, 24rem);
+  height: auto;
+  margin: 0 0 1.6rem;
+}
+
+.roadmap-list .idv-list-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+  filter: invert(72%) sepia(18%) saturate(1040%) hue-rotate(114deg) brightness(86%) contrast(87%);
+}
+
+.roadmap-list li {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+
+.trail-card .trail-svg text {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.trail-card,
+.map-card,
+.question-card,
+.audience-card,
+.stage-grid li {
+  border-radius: .75rem;
+}
+
+.trail-card,
+.map-card {
+  overflow: hidden;
+}
+
+.map-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+}
