@@ -3,26 +3,63 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Diagnóstico | ROTA ZERO ZERO</title>
-  <meta name="description" content="Em breve, algumas perguntas vão ajudar você a identificar um bom ponto de partida em programação.">
+  <title>Descubra seu ponto de partida | ROTA ZERO ZERO</title>
+  <meta name="description" content="Responda a um diagnóstico curto e descubra um ponto de partida provável para avançar em programação sem começar pela linguagem errada.">
   <meta name="robots" content="noindex,follow">
   <meta name="theme-color" content="#F5F1E8">
   <link rel="icon" type="image/svg+xml" href="../assets/brand/brand-symbol-ring-bar.svg">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="diagnostico.css">
+  <script src="diagnostic-rules.js" defer></script>
+  <script src="diagnostic-copy.js" defer></script>
+  <script src="diagnostico.js" defer></script>
 </head>
 <body class="diagnostic-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
   <header class="diagnostic-header">
-    <div class="container"><a href="../" aria-label="Voltar para a página inicial da ROTA ZERO ZERO"><img src="../assets/brand/rota-zero-zero-completa.svg" alt="ROTA ZERO ZERO" class="diagnostic-logo" width="1123" height="364"></a></div>
+    <div class="container">
+      <a href="../" aria-label="Voltar para a página inicial da ROTA ZERO ZERO">
+        <img src="../assets/brand/rota-zero-zero-completa.svg" alt="ROTA ZERO ZERO" class="diagnostic-logo" width="1123" height="364">
+      </a>
+    </div>
   </header>
-  <main class="diagnostic-main">
-    <div class="diagnostic-content">
-      <p class="kicker kicker-green">Em construção</p>
-      <h1>Diagnóstico ROTA ZERO ZERO</h1>
-      <p>Em breve, algumas perguntas vão ajudar você a identificar um bom ponto de partida.</p>
-      <a class="button button-dark diagnostic-back" href="../"><span aria-hidden="true">←</span> Voltar para a página inicial</a>
+
+  <main class="diagnostic-main" id="conteudo">
+    <div class="diagnostic-app" data-diagnostic-app>
+      <section class="diagnostic-intro" data-screen="intro" aria-labelledby="diagnostic-intro-title">
+        <div>
+          <p class="kicker kicker-green">Diagnóstico gratuito</p>
+          <h1 id="diagnostic-intro-title">Descubra seu ponto de partida.</h1>
+          <p class="diagnostic-intro-lead">Em poucas perguntas, a ROTA ZERO ZERO organiza sinais de experiência, autonomia e interesse para indicar o próximo trecho mais provável da jornada.</p>
+
+          <ul class="diagnostic-intro-meta" aria-label="Características do diagnóstico">
+            <li>7 perguntas</li>
+            <li>Sem cadastro</li>
+            <li>Resultado orientativo</li>
+          </ul>
+
+          <button class="button button-green diagnostic-start" type="button" data-action="start">Começar diagnóstico <span aria-hidden="true">→</span></button>
+          <p class="diagnostic-privacy-note">Nenhum nome, e-mail, escola ou dado pessoal de criança ou adolescente é solicitado.</p>
+        </div>
+
+        <div class="diagnostic-intro-visual" aria-hidden="true">
+          <img class="diagnostic-intro-compass" src="../assets/idv/icon-compass-cover.svg" alt="">
+          <img class="diagnostic-intro-route" src="../assets/idv/path-main-ascending.svg" alt="">
+          <p class="diagnostic-intro-caption">O objetivo não é dar uma nota. É encontrar uma direção.</p>
+        </div>
+      </section>
+
+      <div data-diagnostic-dynamic hidden></div>
+      <p class="sr-only" aria-live="polite" aria-atomic="true" data-diagnostic-live></p>
+
+      <noscript>
+        <p class="diagnostic-noscript">Este diagnóstico funciona diretamente no navegador e precisa de JavaScript para avançar entre as perguntas. Nenhum dado é enviado para um servidor.</p>
+      </noscript>
     </div>
   </main>
+
   <footer class="diagnostic-footer">Clareza para explorar. Segurança para avançar.</footer>
 </body>
 </html>
