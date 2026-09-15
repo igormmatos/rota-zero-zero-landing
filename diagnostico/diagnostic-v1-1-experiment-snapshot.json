@@ -1,0 +1,54 @@
+{
+  "experimentVersion": "R00-DIAG-1.1-EXPERIMENT-1",
+  "productionAlgorithmVersion": "R00-DIAG-1.0.0",
+  "baseCombinations": 30720,
+  "classifiedScenarios": 46656,
+  "models": {
+    "V1": {
+      "stageDistribution": {"00":288,"01":16176,"02":23520,"03":5904,"04":768},
+      "changedFromV1": 0,
+      "jumpOverOneTotal": 576
+    },
+    "A_CORE04": {
+      "stageDistribution": {"00":288,"01":16176,"02":23520,"03":5100,"04":1572},
+      "changedFromV1": 1956,
+      "jumpOverOneTotal": 912
+    },
+    "B_TWO_STRONG_SIGNALS": {
+      "stageDistribution": {"00":288,"01":16176,"02":23520,"03":5790,"04":882},
+      "changedFromV1": 1278,
+      "jumpOverOneTotal": 408
+    },
+    "C_PROJECT_AUTHORSHIP": {
+      "stageDistribution": {"00":288,"01":16176,"02":23520,"03":5472,"04":1200},
+      "changedFromV1": 1668,
+      "jumpOverOneTotal": 600
+    },
+    "D_AGENCY_REPRESENTATION": {
+      "stageDistribution": {"00":288,"01":16176,"02":23520,"03":6168,"04":504},
+      "changedFromV1": 1092,
+      "jumpOverOneTotal": 180
+    },
+    "D_TARGETED_TB": {
+      "stageDistribution": {"00":768,"01":16320,"02":24672,"03":4524,"04":372},
+      "changedFromV1": 4608,
+      "jumpOverOneTotal": 180
+    }
+  },
+  "boundaryJumpOverOne": {
+    "V1": {"Q1":0,"Q2":0,"Q3":288,"Q4":288,"Q5":0,"Q6":0},
+    "A_CORE04": {"Q1":0,"Q2":0,"Q3":336,"Q4":336,"Q5":240,"Q6":0},
+    "B_TWO_STRONG_SIGNALS": {"Q1":0,"Q2":0,"Q3":162,"Q4":162,"Q5":84,"Q6":0},
+    "C_PROJECT_AUTHORSHIP": {"Q1":0,"Q2":0,"Q3":204,"Q4":204,"Q5":192,"Q6":0},
+    "D_AGENCY_REPRESENTATION": {"Q1":0,"Q2":0,"Q3":60,"Q4":48,"Q5":72,"Q6":0},
+    "D_TARGETED_TB": {"Q1":0,"Q2":0,"Q3":60,"Q4":48,"Q5":72,"Q6":0}
+  },
+  "leadingCandidate": {
+    "id": "D_AGENCY_REPRESENTATION",
+    "gate04": "core04 + agency(E4 or M3) + representationDepth(S3 or R3)",
+    "core04": "built + P3 + S2_or_S3 + M2_or_M3 + D2_or_D3",
+    "q5V11": "D3 deve representar hipótese + teste; consultar uma fonte sai do construto.",
+    "tbPolicy": "Não aplicar junto nesta fase. A política targeted muda 4608/46656 cenários e deve ser testada separadamente.",
+    "status": "candidato de pesquisa; não aprovado para produção"
+  }
+}
