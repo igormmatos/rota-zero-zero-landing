@@ -1,0 +1,52 @@
+.diagnostic-result-topline {
+  justify-content: flex-start;
+}
+
+.diagnostic-decision {
+  margin-top: 2rem;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  background: var(--papel);
+  padding: 1.25rem 1.35rem;
+}
+
+.diagnostic-decision h2 {
+  margin: .5rem 0 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+
+.diagnostic-decision p:last-child {
+  margin: .7rem 0 0;
+  color: var(--cinza-texto);
+  line-height: 1.65;
+}
+
+.diagnostic-result[data-route-decision="EXPLORE_FIRST"] .diagnostic-decision {
+  border-left: 4px solid var(--verde);
+}
+
+.diagnostic-result[data-route-decision="REDUCE_PROJECT"] .diagnostic-decision {
+  border-left: 4px solid var(--terra);
+}
+
+.diagnostic-result[data-route-decision="STRUCTURE_PROJECT"] .diagnostic-decision {
+  border-left: 4px solid var(--azul);
+}
+
+.diagnostic-result[data-route-decision="SUGGEST_ROUTE"] .diagnostic-decision {
+  border-left: 4px solid var(--tinta);
+}
+
+.diagnostic-result[data-route-decision="SUGGEST_ROUTE"] .diagnostic-direction {
+  border-left-color: var(--azul);
+  background: color-mix(in srgb, var(--azul) 7%, var(--papel));
+}
+
+@media (max-width: 480px) {
+  .diagnostic-decision {
+    padding: 1rem;
+  }
+}
