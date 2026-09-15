@@ -1,0 +1,39 @@
+{
+  "experimentVersion": "R00-DIAG-2AXIS-EXPERIMENT-1",
+  "productionAlgorithmVersion": "R00-DIAG-1.0.0",
+  "baseCombinations": 30720,
+  "classifiedScenarios": 46656,
+  "learningStageDistribution": {"00":288,"01":16176,"02":23520,"03":6672},
+  "learningBoundary": {
+    "Q1":{"comparedPairs":16608,"regressions":0,"jumpOverOne":0,"deltaCounts":{"0":15936,"1":672}},
+    "Q2":{"comparedPairs":17064,"regressions":0,"jumpOverOne":0,"deltaCounts":{"0":16728,"1":336}},
+    "Q3":{"comparedPairs":17064,"regressions":0,"jumpOverOne":0,"deltaCounts":{"0":9936,"1":7128}},
+    "Q4":{"comparedPairs":16608,"regressions":0,"jumpOverOne":0,"deltaCounts":{"0":14976,"1":1632}},
+    "Q5":{"comparedPairs":16992,"regressions":0,"jumpOverOne":0,"deltaCounts":{"0":15648,"1":1344}},
+    "Q6":{"comparedPairs":15936,"regressions":0,"jumpOverOne":0,"deltaCounts":{"0":15552,"1":384}}
+  },
+  "variants": {
+    "A_PROJECT_CLARITY": {
+      "readinessDistribution":{"NOT_READY":23328,"READY":23328},
+      "learningStageCrossTab":{"00":{"READY":0,"NOT_READY":288},"01":{"READY":5832,"NOT_READY":10344},"02":{"READY":14160,"NOT_READY":9360},"03":{"READY":3336,"NOT_READY":3336}},
+      "overlapWithV1Stage04":{"V1_NOT04_NOT_READY":22944,"V1_04_NOT_READY":384,"V1_NOT04_READY":22944,"V1_04_READY":384},
+      "conflictCoresSensitiveToTB":0,
+      "readinessBoundary":{"Q1":{"comparedPairs":16608,"readyToNotReadyRegressions":0,"notReadyToReady":0},"Q2":{"comparedPairs":17064,"readyToNotReadyRegressions":0,"notReadyToReady":5688},"Q3":{"comparedPairs":17064,"readyToNotReadyRegressions":0,"notReadyToReady":0},"Q4":{"comparedPairs":16608,"readyToNotReadyRegressions":0,"notReadyToReady":0},"Q5":{"comparedPairs":16992,"readyToNotReadyRegressions":0,"notReadyToReady":0},"Q6":{"comparedPairs":15936,"readyToNotReadyRegressions":0,"notReadyToReady":0}}
+    },
+    "B_PROJECT_STRUCTURE": {
+      "readinessDistribution":{"NOT_READY":29160,"READY":17496},
+      "learningStageCrossTab":{"00":{"READY":0,"NOT_READY":288},"01":{"READY":0,"NOT_READY":16176},"02":{"READY":14160,"NOT_READY":9360},"03":{"READY":3336,"NOT_READY":3336}},
+      "overlapWithV1Stage04":{"V1_NOT04_NOT_READY":28776,"V1_04_NOT_READY":384,"V1_NOT04_READY":17112,"V1_04_READY":384},
+      "conflictCoresSensitiveToTB":0,
+      "readinessBoundary":{"Q1":{"comparedPairs":16608,"readyToNotReadyRegressions":0,"notReadyToReady":0},"Q2":{"comparedPairs":17064,"readyToNotReadyRegressions":0,"notReadyToReady":4266},"Q3":{"comparedPairs":17064,"readyToNotReadyRegressions":0,"notReadyToReady":2844},"Q4":{"comparedPairs":16608,"readyToNotReadyRegressions":0,"notReadyToReady":0},"Q5":{"comparedPairs":16992,"readyToNotReadyRegressions":0,"notReadyToReady":0},"Q6":{"comparedPairs":15936,"readyToNotReadyRegressions":0,"notReadyToReady":0}}
+    },
+    "C_CAPABILITY_EVIDENCE": {
+      "readinessDistribution":{"NOT_READY":43512,"READY":3144},
+      "learningStageCrossTab":{"00":{"READY":0,"NOT_READY":288},"01":{"READY":0,"NOT_READY":16176},"02":{"READY":0,"NOT_READY":23520},"03":{"READY":3144,"NOT_READY":3528}},
+      "overlapWithV1Stage04":{"V1_NOT04_NOT_READY":43128,"V1_04_NOT_READY":384,"V1_NOT04_READY":2760,"V1_04_READY":384},
+      "conflictCoresSensitiveToTB":1800,
+      "readinessBoundary":{"Q1":{"comparedPairs":16608,"readyToNotReadyRegressions":0,"notReadyToReady":0},"Q2":{"comparedPairs":17064,"readyToNotReadyRegressions":0,"notReadyToReady":672},"Q3":{"comparedPairs":17064,"readyToNotReadyRegressions":0,"notReadyToReady":672},"Q4":{"comparedPairs":16608,"readyToNotReadyRegressions":0,"notReadyToReady":672},"Q5":{"comparedPairs":16992,"readyToNotReadyRegressions":0,"notReadyToReady":672},"Q6":{"comparedPairs":15936,"readyToNotReadyRegressions":0,"notReadyToReady":0}}
+    }
+  },
+  "leadingHypothesis":"B_PROJECT_STRUCTURE"
+}
