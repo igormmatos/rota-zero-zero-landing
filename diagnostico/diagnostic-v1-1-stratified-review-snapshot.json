@@ -1,0 +1,58 @@
+{
+  "reviewVersion": "R00-DIAG-1.1-STRATIFIED-REVIEW-1",
+  "baseline": "R00-DIAG-1.0.0",
+  "candidate": "D_AGENCY_REPRESENTATION",
+  "universe": {
+    "baseCombinations": 30720,
+    "classifiedScenarios": 46656,
+    "changedScenarios": 1092,
+    "v1ToD": {
+      "04->03": 678,
+      "03->04": 414
+    },
+    "boundaryJumpsOverOne": {
+      "total": 180,
+      "Q3": 60,
+      "Q4": 48,
+      "Q5": 72
+    }
+  },
+  "changeMechanisms": {
+    "04->03": {
+      "no_P3": 270,
+      "no_P3+no_agency": 234,
+      "no_agency": 78,
+      "no_P3+no_rep_depth": 54,
+      "no_P3+no_agency+no_rep_depth": 18,
+      "no_rep_depth": 18,
+      "no_agency+no_rep_depth": 6,
+      "cleanNoConflict": 498,
+      "withConflictAndTB": 180
+    },
+    "03->04": {
+      "no_D3": 132,
+      "no_D3+no_textRep": 114,
+      "no_textRep": 48,
+      "no_expText+no_D3+no_textRep": 42,
+      "no_expText+no_D3": 30,
+      "no_expText+no_textRep": 30,
+      "no_expText": 18,
+      "cleanNoConflict": 186,
+      "withConflictAndTB": 228
+    }
+  },
+  "sample": {
+    "changedProfiles": 18,
+    "boundaryPairs": 6,
+    "method": "amostra intencional estratificada por mecanismo de mudança; Q7 fixado em I_WEB quando possível para não confundir interesse com stage",
+    "notStatistical": true
+  },
+  "manualReviewSummary": {
+    "supportsCandidateD": 11,
+    "candidateDOverStrictOrNeedsLoosening": 4,
+    "rejectPromotionBecauseCurrentTBContaminatesOtherDimensions": 3,
+    "boundaryPairsClassifiedAsArchitecturalSignals": 6
+  },
+  "mainConclusion": "O candidato D corrige parte relevante das fragilidades de texto e D3 como hard gates, mas não deve ir para produção como simples substituição do Gate04. A revisão estratificada mostra que Stage04 funciona mais como decisão de rota do que como nível ordinal de proficiência; portanto, minimizar saltos 02->04 não é um objetivo válido por si só. A próxima hipótese deve separar learningStage (00-03) de routeReadiness/routeSuggestion.",
+  "productionDecision": "NO_CHANGE"
+}
