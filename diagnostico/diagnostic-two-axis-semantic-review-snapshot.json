@@ -1,0 +1,54 @@
+{
+  "reviewVersion": "R00-DIAG-2AXIS-SEMANTIC-REVIEW-1",
+  "productionAlgorithmVersion": "R00-DIAG-1.0.0",
+  "classifiedScenarios": 46656,
+  "currentB": {
+    "READY": 17496,
+    "NOT_READY": 29160,
+    "readyByQ2": {
+      "P2_IDEA": 8748,
+      "P3_MINIMUM": 8748
+    }
+  },
+  "refinedRouteDecision": {
+    "EXPLORE_FIRST": 23328,
+    "REDUCE_PROJECT": 11664,
+    "STRUCTURE_PROJECT": 2916,
+    "SUGGEST_ROUTE": 8748
+  },
+  "learningStageRouteDecisionCrossTab": {
+    "00:EXPLORE_FIRST": 288,
+    "01:EXPLORE_FIRST": 10344,
+    "01:REDUCE_PROJECT": 2916,
+    "01:STRUCTURE_PROJECT": 2916,
+    "02:EXPLORE_FIRST": 9360,
+    "02:REDUCE_PROJECT": 7080,
+    "02:SUGGEST_ROUTE": 7080,
+    "03:EXPLORE_FIRST": 3336,
+    "03:REDUCE_PROJECT": 1668,
+    "03:SUGGEST_ROUTE": 1668
+  },
+  "v1Stage04ByRouteDecision": {
+    "EXPLORE_FIRST": 384,
+    "REDUCE_PROJECT": 192,
+    "STRUCTURE_PROJECT": 0,
+    "SUGGEST_ROUTE": 192
+  },
+  "v1Not04SuggestRoute": 8556,
+  "conflictCores": 7968,
+  "conflictCoresSensitiveToTB": 0,
+  "manualReview": {
+    "profilesReviewed": 24,
+    "minimalPairsReviewed": 4,
+    "finding": "B_PROJECT_STRUCTURE e excessivamente permissivo em P2. O Livro-fonte exige reduzir a ideia a uma versao pequena antes de escolher tecnologia.",
+    "recommendedInternalModel": "learningStage + routeDecision",
+    "recommendedRouteDecisionStates": [
+      "EXPLORE_FIRST",
+      "REDUCE_PROJECT",
+      "STRUCTURE_PROJECT",
+      "SUGGEST_ROUTE"
+    ],
+    "publicCopyGuidance": "Nao expor READY como dominio tecnico. Preferir linguagem de proxima decisao: explorar, reduzir, estruturar ou sugerir uma rota."
+  },
+  "status": "candidato editorial para especificacao V1.1; ainda nao implementado em producao"
+}
