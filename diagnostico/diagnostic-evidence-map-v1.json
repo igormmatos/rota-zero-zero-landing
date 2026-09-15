@@ -1,0 +1,102 @@
+{
+  "evidenceAuditVersion": "R00-EVIDENCE-AUDIT-1.0.0",
+  "algorithmVersion": "R00-DIAG-1.0.0",
+  "purpose": "Mapear o grau de suporte científico dos construtos e separar esse suporte das heurísticas editoriais do produto.",
+  "legend": {
+    "A": "suporte direto ao construto",
+    "B": "suporte indireto ou adjacente",
+    "C": "heurística editorial não validada como threshold",
+    "R": "requer revisão por risco de mistura de construtos ou hard gate sem suporte suficiente"
+  },
+  "items": {
+    "C0": {
+      "construct": "contexto de microcopy",
+      "evidenceClass": "C",
+      "keep": true,
+      "note": "Não mede habilidade e não altera classificação."
+    },
+    "Q1": {
+      "construct": "experiência prática e autoria",
+      "evidenceClass": "B",
+      "thresholdClass": "C",
+      "keep": true,
+      "risk": "autorrelato não demonstra domínio; E0-E4 não é escala psicométrica validada"
+    },
+    "Q2": {
+      "construct": "clareza e redução de escopo de projeto",
+      "evidenceClass": "C",
+      "thresholdClass": "C",
+      "keep": true,
+      "risk": "boa heurística de produto, mas não medida validada de competência"
+    },
+    "Q3": {
+      "construct": "decomposição, regras, previsão de consequências",
+      "evidenceClass": "A",
+      "thresholdClass": "R",
+      "keep": true,
+      "risk": "S1->S2 pode ser o único gatilho restante para salto 02->04; literatura não valida esse corte"
+    },
+    "Q4": {
+      "construct": "autonomia, modificação, transferência",
+      "evidenceClass": "A",
+      "thresholdClass": "R",
+      "keep": true,
+      "risk": "M1->M2 pode ser o único gatilho restante para salto 02->04; scaffolding sustenta continuum, não threshold universal"
+    },
+    "Q5": {
+      "construct": "debugging sistemático",
+      "evidenceClass": "A",
+      "thresholdClass": "R",
+      "keep": true,
+      "risk": "D3 combina hipótese, consulta a fonte e teste; consulta a fonte não foi sustentada como requisito universal"
+    },
+    "Q6": {
+      "construct": "modalidade visual/textual e leitura/escrita de código",
+      "evidenceClass": "B",
+      "thresholdClass": "R",
+      "keep": true,
+      "risk": "texto como hard gate universal de 04 cria hierarquia que a literatura blocos->texto não sustenta"
+    },
+    "Q7": {
+      "construct": "interesse atual",
+      "evidenceClass": "B",
+      "thresholdClass": "C",
+      "keep": true,
+      "note": "Correto manter interesse separado de stage; interesse/disposição não equivale a habilidade."
+    },
+    "TB": {
+      "construct": "independência + autoria + teste + explicação",
+      "evidenceClass": "R",
+      "thresholdClass": "R",
+      "keep": false,
+      "risk": "item composto; T0 e T1 não diferenciam stage na V1, apesar de serem conceitualmente distintos em scaffolding"
+    }
+  },
+  "gates": {
+    "00": {"evidenceClass": "C", "note": "fallback editorial"},
+    "01": {"evidenceClass": "C", "note": "regra OR editorial"},
+    "02": {"evidenceClass": "B", "thresholdClass": "C", "note": "blocos/visual são caminho útil, não etapa universal obrigatória"},
+    "03": {"evidenceClass": "B", "thresholdClass": "C", "note": "arquitetura conceitualmente coerente; thresholds não validados"},
+    "04": {"evidenceClass": "R", "thresholdClass": "R", "note": "conjunção de requisitos não validada; maior risco em texto obrigatório e D3"}
+  },
+  "priorityActions": [
+    "reavaliar R2/R3 como hard gate universal de Gate04",
+    "separar debugging sistemático de consulta a fonte em Q5/D3",
+    "simplificar TB ou usar suas respostas apenas para confiança/copy",
+    "revisar casos em que S1->S2 e M1->M2 permitem 02->04",
+    "preservar a comunicação de resultado como ponto de partida provável e orientativo",
+    "considerar 1-2 microcenários de desempenho em versão futura"
+  ],
+  "coreReferences": [
+    "Tang et al. 2020 — https://doi.org/10.1016/j.compedu.2019.103798",
+    "Zhang & Nouri 2019 — https://doi.org/10.1016/j.compedu.2019.103607",
+    "Fagerlund et al. 2020/2021 — https://doi.org/10.1002/cae.22255",
+    "Weintrop & Wilensky 2017 — https://doi.org/10.1145/3089799",
+    "Weintrop & Wilensky 2019 — https://doi.org/10.1016/j.compedu.2019.103646",
+    "Yang et al. 2024 — https://doi.org/10.1145/3690652",
+    "Thangaraj et al. 2023 — https://doi.org/10.4230/OASIcs.ICPEC.2023.7",
+    "Luxton-Reilly et al. 2018 — https://doi.org/10.1145/3174781.3174784",
+    "Mermelshtine 2017 — https://doi.org/10.1111/bjep.12147",
+    "Wood, Bruner & Ross 1976 — https://doi.org/10.1111/j.1469-7610.1976.tb00381.x"
+  ]
+}
