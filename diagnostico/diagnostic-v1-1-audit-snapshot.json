@@ -1,0 +1,65 @@
+{
+  "auditVersion": "R00-DIAG-1.1-AUDIT-1",
+  "algorithmVersion": "R00-DIAG-1.1.0",
+  "baseCombinations": 30720,
+  "classifiableScenarios": 36864,
+  "hardConflictBaseCores": 3072,
+  "hardConflictCoresStageSensitiveToTB": 1056,
+  "hardConflictCoresRouteSensitiveToTB": 0,
+  "softInconsistencyBaseCores": {
+    "S1_EXPERIENCE_REPRESENTATION": 3072,
+    "S3_PAST_TEXT_CURRENT_COMFORT": 2976,
+    "S2_PROJECT_AUTONOMY+S3_PAST_TEXT_CURRENT_COMFORT": 96,
+    "S2_PROJECT_AUTONOMY": 288
+  },
+  "learningStageDistribution": {
+    "00": 576,
+    "01": 12912,
+    "02": 19248,
+    "03": 4128
+  },
+  "routeDecisionDistribution": {
+    "EXPLORE_FIRST": 18432,
+    "REDUCE_PROJECT": 9216,
+    "STRUCTURE_PROJECT": 2304,
+    "SUGGEST_ROUTE": 6912
+  },
+  "learningStageRouteDecisionCrossTab": {
+    "00:EXPLORE_FIRST": 576,
+    "01:EXPLORE_FIRST": 8304,
+    "03:EXPLORE_FIRST": 2064,
+    "01:REDUCE_PROJECT": 2304,
+    "02:REDUCE_PROJECT": 5880,
+    "03:REDUCE_PROJECT": 1032,
+    "01:STRUCTURE_PROJECT": 2304,
+    "02:SUGGEST_ROUTE": 5880,
+    "03:SUGGEST_ROUTE": 1032,
+    "02:EXPLORE_FIRST": 7488
+  },
+  "routeSuggestionDistribution": {
+    "web": 1152,
+    "automation": 1152,
+    "games": 1152,
+    "apps": 1152,
+    "ai_data": 1152,
+    "open_exploration": 1152
+  },
+  "tbStageDistribution": {
+    "T0_NOT_YET:00": 384,
+    "T1_WITH_HELP:01": 1920,
+    "T2_YES:01": 1584,
+    "T0_NOT_YET:01": 1536,
+    "T2_YES:03": 672,
+    "T0_NOT_YET:02": 1152,
+    "T1_WITH_HELP:02": 1152,
+    "T2_YES:02": 816
+  },
+  "monotonicity": {
+    "Q1": {"comparedPairs": 21504, "regressions": 0, "jumpOverOne": 0},
+    "Q2": {"comparedPairs": 20736, "regressions": 0, "jumpOverOne": 0},
+    "Q3": {"comparedPairs": 20736, "regressions": 0, "jumpOverOne": 0},
+    "Q4": {"comparedPairs": 19968, "regressions": 0, "jumpOverOne": 0},
+    "Q5": {"comparedPairs": 20736, "regressions": 0, "jumpOverOne": 0},
+    "Q6": {"comparedPairs": 20736, "regressions": 0, "jumpOverOne": 0}
+  }
+}
