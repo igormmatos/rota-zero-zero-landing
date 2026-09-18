@@ -46,7 +46,7 @@ Não há React, Vite, Node.js, npm ou etapa de build para publicação.
 - `index.html`: conteúdo, estrutura, SEO, Open Graph e composição visual essencial.
 - `diagnostico/`: motor, copy, interface e testes do diagnóstico.
 - `api/diagnostico-feedback.php`: endpoint mínimo para registrar feedback e sinais de uso do diagnóstico.
-- `docs/`: decisões, auditorias e documentação técnica que explicam o porquê das escolhas do projeto.
+- `docs/`: especificações, decisões, auditorias e histórico técnico; consulte `docs/DIAGNOSTICO-README.md` para distinguir estado atual, evidência e P&D.
 - `css/styles.css`: sistema visual geral e responsividade.
 - `css/idv-static.css`: regras específicas da identidade e salvaguardas de progressive enhancement.
 - `js/main.js`: somente comportamento — menu móvel, ano corrente e animações de entrada.
@@ -86,6 +86,8 @@ A landing utiliza os ativos oficiais da ROTA ZERO ZERO para assinatura de marca,
 ## Organização do trabalho
 
 - `PROJECT_STATUS.md` responde **onde o projeto está e o que vem depois**.
+- `AGENTS.md` define autoridade e contexto progressivo para agentes.
+- `docs/DIAGNOSTICO-README.md` separa documentação **CURRENT / EVIDENCE / HISTORY**.
 - GitHub Issues registram trabalho executável, pendências e validações.
 - `docs/` preserva decisões, evidências e documentação técnica.
 - Pull Requests registram mudanças concretas de código ou documentação.
