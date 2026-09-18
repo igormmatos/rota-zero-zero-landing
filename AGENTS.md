@@ -36,3 +36,34 @@ A saída de `R00-DIAG-1.1.0` é consumida pelo contrato `R00-GUIDED-CYCLE-1.0.0`
 - não apresentar o diagnóstico como teste psicométrico, certificação ou medição científica de competência;
 - mudanças de motor exigem evidência de validação ou problema reproduzível;
 - build/teste automatizado não substitui QA humano de navegador, teclado e responsividade.
+
+
+## Regra de retomada a frio
+
+Este repositório deve permanecer **retomável a frio**: um agente novo, sem acesso à conversa que originou o trabalho, deve conseguir reconstruir o estado operacional apenas pelas fontes versionadas e responder corretamente:
+
+1. **Onde estamos?**
+2. **O que está decidido/congelado?**
+3. **Qual é o próximo passo dentro do escopo deste repositório?**
+
+A cadeia mínima de retomada é:
+
+`AGENTS.md → PROJECT_STATUS.md → Issues/PRs relevantes → documentação específica necessária`.
+
+### Critério de encerramento de trabalho
+
+Uma tarefa não está documentalmente encerrada se sua conclusão mudar o estado real do projeto e essa mudança não puder ser recuperada pela cadeia acima.
+
+Ao concluir trabalho que altere fase, contrato, decisão congelada, prioridade ou fronteira entre componentes:
+
+- atualize a fonte normativa correspondente;
+- atualize `PROJECT_STATUS.md` somente quando o estado operacional realmente mudar;
+- mantenha Issues/PRs como registro do trabalho executável;
+- preserve histórico como histórico, sem deixá-lo competir com o estado vigente;
+- não dependa de memória de chat, prompt longo ou conhecimento pessoal do agente para explicar o estado atual.
+
+Se um agente precisar receber contexto extenso no prompt para descobrir onde o projeto está, trate isso como **falha de documentação do repositório** e corrija a documentação canônica em vez de perpetuar o contexto no prompt.
+
+### Limite
+
+Retomada a frio vale para o **escopo deste repositório**. Não duplicar todo o estado de outros repositórios. Registrar apenas as fronteiras e contratos externos necessários para entender entradas, saídas e dependências.
