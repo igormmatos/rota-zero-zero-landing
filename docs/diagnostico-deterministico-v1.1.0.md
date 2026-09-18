@@ -1,6 +1,6 @@
 # ROTA ZERO ZERO — Diagnóstico determinístico V1.1.0
 
-**Status:** especificação normativa candidata. O motor V1 (`R00-DIAG-1.0.0`) permanece inalterado até aprovação explícita desta versão e da auditoria correspondente.
+**Status:** especificação normativa vigente do diagnóstico `R00-DIAG-1.1.0`, implementado e congelado para o MVP. A validação humana permanece em andamento; isso não transforma os thresholds editoriais em escala cientificamente validada.
 
 ## 1. Pergunta de produto
 
@@ -319,9 +319,9 @@ Distribuição esperada:
 
 A distribuição combinatória não representa prevalência real de usuários nem acurácia do diagnóstico.
 
-## 13. Critérios antes de substituir a V1
+## 13. Critérios usados para substituir a V1 — registro histórico
 
-A V1.1 só pode substituir produção após:
+Os critérios abaixo orientaram a promoção da V1.1 antes de ela se tornar a versão implementada. São preservados para rastreabilidade histórica:
 
 1. testes da bateria regressiva passarem;
 2. auditoria exaustiva confirmar determinismo e invariantes;
@@ -331,4 +331,4 @@ A V1.1 só pode substituir produção após:
 6. QA manual em navegador, teclado e responsividade;
 7. decisão explícita de publicação.
 
-Até lá, `diagnostic-rules.js` V1 e a UI atual permanecem intocados.
+A promoção posterior foi concluída: a produção atual carrega `diagnostic-rules-v1-1.js`, `diagnostic-copy-v1-1.js` e `diagnostico-v1-1.js`. Os arquivos V1 permanecem no repositório como histórico técnico e suporte à rastreabilidade.
