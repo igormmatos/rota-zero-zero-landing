@@ -6,22 +6,24 @@ Este arquivo é a referência rápida para retomar o projeto. Registra estado, f
 
 ## Fase atual
 
-**VALIDAÇÃO HUMANA DO DIAGNÓSTICO V1.1 + PREPARAÇÃO DA INTEGRAÇÃO COM O PRIMEIRO CICLO GUIADO**
+**CRIAÇÃO E VALIDAÇÃO DAS FONTES DA TELA PÓS-DIAGNÓSTICO GRATUITA**
 
-O motor, a copy pública, a interface V1.1 e a coleta mínima de feedback estão implementados na `main`.
+A prioridade operacional atual é consolidar e validar as fontes editoriais e contratuais que sustentarão a tela pós-diagnóstico gratuita / primeiro ciclo guiado antes de implementar essa tela.
 
-A arquitetura do diagnóstico está **congelada para o MVP**. Não alterar regras, thresholds ou critérios por preferência pontual. Mudanças semânticas ou de motor exigem padrão recorrente de validação ou problema reproduzível.
+A landing e o diagnóstico `R00-DIAG-1.1.0` permanecem funcionais e implementados na `main`. A arquitetura do diagnóstico continua **congelada para o MVP**.
+
+A validação humana do diagnóstico e a validação da coleta de feedback continuam abertas, porém em **observação**: serão conduzidas com calma, profundidade e acúmulo de evidências, sem puxar mudanças apressadas no motor, thresholds, copy ou arquitetura.
 
 ## Landing page
 
 **Status:** funcional e publicada.
 
-A landing é a porta de entrada para o diagnóstico e para o Roadmap. Refinamento visual/layout não deve preceder validação humana e QA funcional.
+A landing é a porta de entrada para o diagnóstico e para o Roadmap. Refinamento visual/layout não é prioridade nesta fase.
 
 ## Diagnóstico
 
 **Versão:** `R00-DIAG-1.1.0`  
-**Status:** implementado; validação humana em andamento.
+**Status:** implementado; em observação durante validação humana.
 
 Saída estrutural relevante:
 
@@ -48,16 +50,34 @@ landing/conteúdo
   → R00-DIAG-1.1.0
   → resultado estruturado
   → R00-GUIDED-CYCLE-1.0.0
-  → primeiro ciclo guiado
+  → primeiro ciclo guiado gratuito
 ```
 
-Esta integração lógica não significa que a aplicação autenticada/persistente do ciclo guiado já esteja implementada. A criação de um terceiro repositório/app também não está congelada como decisão arquitetural.
+A implementação da tela pós-diagnóstico deve consumir fontes validadas do Roadmap sem duplicar ou reinterpretar silenciosamente o contrato externo.
+
+A criação de uma aplicação autenticada/persistente continua fora do escopo atual e não está congelada como decisão arquitetural.
+
+## Fontes da tela pós-diagnóstico gratuita
+
+**Status:** em andamento.  
+**Issue principal:** #30 — Fontes da tela pós-diagnóstico gratuita.
+
+Antes de implementar a tela, é necessário:
+
+1. consolidar as fontes editoriais vigentes;
+2. separar fonte canônica, evidência, guardrails e histórico/P&D;
+3. validar a correspondência entre a saída do diagnóstico e o primeiro ciclo guiado;
+4. delimitar exatamente o conteúdo gratuito;
+5. confirmar copy, limites e critérios de avanço;
+6. somente depois implementar a experiência pós-diagnóstico.
+
+Trabalho relacionado no repositório do Roadmap: PR #118 — **Consolidar fontes editoriais V2.1 no Roadmap**.
 
 ## Feedback e validação comportamental
 
-**Status:** implementado; validação no ambiente real da Hostinger ainda pendente.
+**Status:** em observação.
 
-Eventos:
+Eventos já implementados:
 
 - `result_viewed`;
 - `feedback_submitted`;
@@ -65,20 +85,24 @@ Eventos:
 
 A coleta não usa cookies, `localStorage` ou `sessionStorage` e não solicita nome, e-mail, idade ou escola. O armazenamento previsto é `r00-private-data/diagnostico-feedback.jsonl`, fora de `public_html`.
 
+A validação em ambiente real da Hostinger ainda precisa ser concluída, mas não é a prioridade operacional principal neste momento.
+
 ## Em andamento
 
-- **#23 — Validação humana do diagnóstico V1.1**
-- **#25 — Validar coleta de feedback no Hostinger pelo computador**
+- **#30 — criação e validação das fontes da tela pós-diagnóstico gratuita** — prioridade principal;
+- **#23 — validação humana do diagnóstico V1.1** — em observação;
+- **#25 — validação da coleta de feedback no Hostinger** — em observação.
 
 ## Próximos passos
 
-1. Validar a coleta no ambiente real da Hostinger.
-2. Rodar validação humana com usuários reais.
-3. Corrigir apenas problemas semânticos ou funcionais recorrentes.
-4. Executar QA funcional, responsivo e de acessibilidade/teclado.
-5. Validar a passagem do resultado estruturado para o primeiro ciclo guiado.
-6. Fazer refinamento final de layout e identidade visual.
-7. Revisar indexação e decidir a retirada de `noindex`.
+1. Consolidar e validar as fontes da tela pós-diagnóstico gratuita.
+2. Fechar a fronteira do conteúdo gratuito e sua correspondência com `R00-GUIDED-CYCLE-1.0.0`.
+3. Validar o mapeamento entre a saída `R00-DIAG-1.1.0` e o primeiro ciclo guiado.
+4. Só então implementar a tela pós-diagnóstico gratuita.
+5. Manter #23 e #25 em observação e registrar padrões recorrentes, sem alterações precipitadas.
+6. Depois da implementação, executar QA funcional, responsivo e de acessibilidade/teclado.
+7. Refinamento final de layout e identidade visual somente depois da validação funcional.
+8. Revisar indexação e decidir a retirada de `noindex` quando a experiência estiver pronta.
 
 ## Fora de escopo agora
 
@@ -88,11 +112,22 @@ A coleta não usa cookies, `localStorage` ou `sessionStorage` e não solicita no
 - expansão do questionário;
 - mudança de arquitetura por casos isolados;
 - criação automática de terceiro repositório/app;
+- login, progresso persistente ou marketplace;
+- implementação da tela pós-diagnóstico antes de validar suas fontes;
 - refinamento cosmético antes da validação funcional.
 
-## Critério para avançar da validação humana
+## Critério para implementar a tela pós-diagnóstico
 
-A fase pode avançar quando as perguntas forem entendidas sem confusão recorrente, os resultados forem percebidos como razoáveis diante das respostas, a orientação ajudar a enxergar um próximo passo, não houver padrão recorrente de resultado claramente inadequado e a coleta de feedback/clique estiver funcionando em produção.
+A implementação pode começar quando:
+
+- as fontes necessárias estiverem versionadas e com autoridade clara;
+- o conteúdo gratuito estiver delimitado;
+- o mapeamento entre a saída do diagnóstico e o primeiro ciclo guiado estiver consistente;
+- a decisão puder ser reconstruída pelas fontes do repositório sem depender de histórico de chat.
+
+## Critério da observação do diagnóstico
+
+A observação pode ser encerrada quando as perguntas forem entendidas sem confusão recorrente, os resultados forem percebidos como razoáveis diante das respostas, a orientação ajudar a enxergar um próximo passo, não houver padrão recorrente de resultado claramente inadequado e a coleta de feedback/clique estiver confirmada em produção.
 
 Discordâncias pontuais entre estágios próximos não exigem mudança do motor por si só: o diagnóstico indica um **ponto de partida provável**, não uma obrigação de percurso.
 
@@ -101,8 +136,9 @@ Discordâncias pontuais entre estágios próximos não exigem mudança do motor 
 - Landing: https://rota-zero-zero-landing-145931.hostingersite.com/
 - Diagnóstico: https://rota-zero-zero-landing-145931.hostingersite.com/diagnostico/
 - Manual de Identidade Visual: https://darkslategrey-goat-979048.hostingersite.com/idv/idv-roadmap.html
-- Validação humana: https://github.com/igormmatos/rota-zero-zero-landing/issues/23
-- Validação da coleta: https://github.com/igormmatos/rota-zero-zero-landing/issues/25
+- Fontes pós-diagnóstico: https://github.com/igormmatos/rota-zero-zero-landing/issues/30
+- Validação humana em observação: https://github.com/igormmatos/rota-zero-zero-landing/issues/23
+- Validação da coleta em observação: https://github.com/igormmatos/rota-zero-zero-landing/issues/25
 
 ## Regra de manutenção
 
